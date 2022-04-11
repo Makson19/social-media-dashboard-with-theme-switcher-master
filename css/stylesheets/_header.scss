@@ -1,0 +1,83 @@
+
+// ===== Header ===== //
+.header {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.8rem;
+
+    .wrap-title {
+        border-bottom: 1px solid var(--text);
+        
+        .title {
+            color: var(--text-2);
+            font: 700 1.7rem var(--font);
+            margin-bottom: 0.2rem;
+        }
+
+        .subtitle {
+            color: var(--text);
+            font: 700 1rem var(--font);
+            margin-bottom: 2rem;
+        }
+    }
+
+    .wrap-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 1rem;
+        cursor: pointer;
+
+        .theme {
+            color: var(--text);
+            font: 700 1rem var(--font);
+        }
+
+        .switch {
+            position : relative;
+            display: inline-block;
+            width: 4rem;
+            height: 2rem;
+            border-radius: 1rem;
+            overflow: hidden;
+
+            #switcher {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--toggle);
+
+                &:hover {
+                    background: var(--twitter);
+                }
+            }
+
+            .slider::before {
+                position: absolute;
+                content: "";
+                height: 22px;
+                width: 22px;
+                border-radius: 50%;
+                left: 3px;
+                bottom: 3px;
+                background-color: var(--top-bg);
+                transition: .4s;
+            }
+
+            #switcher:checked + .slider::before {
+                transform: translateX(28px);
+            }
+
+        }
+    }
+}
+

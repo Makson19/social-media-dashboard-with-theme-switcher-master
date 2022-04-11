@@ -1,0 +1,700 @@
+:root {
+  --font: 'Inter', sans-serif;
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --youtube: hsl(348, 97%, 39%);
+  --toggle: linear-gradient(90deg, hsl(210, 78%, 56%) 0%, hsl(146, 68%, 55%) 100%);
+  --bg: hsl(230, 17%, 14%);
+  --top-bg: hsl(232, 19%, 15%);
+  --card-bg: hsl(228, 28%, 20%);
+  --card-bg-hover: hsl(228, 26%, 27%);
+  --text: hsl(228, 34%, 66%);
+  --text-2: hsl(0, 0%, 100%);
+}
+
+.light-theme:root {
+  --toggle: hsl(230, 22%, 74%);
+  --bg: hsl(0, 0%, 100%);
+  --top-bg: hsl(225, 100%, 98%);
+  --card-bg: hsl(227, 47%, 96%);
+  --card-bg-hover: hsl(233, 35%, 91%);
+  --text: hsl(228, 12%, 44%);
+  --text-2: hsl(230, 17%, 14%);
+}
+
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  font-size: 14px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+body {
+  background: var(--bg);
+}
+
+.pattern {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 17.5rem;
+  width: 100%;
+  z-index: -2;
+  background-color: var(--top-bg);
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2rem 1.8rem;
+}
+
+.header .wrap-title {
+  border-bottom: 1px solid var(--text);
+}
+
+.header .wrap-title .title {
+  color: var(--text-2);
+  font: 700 1.7rem var(--font);
+  margin-bottom: 0.2rem;
+}
+
+.header .wrap-title .subtitle {
+  color: var(--text);
+  font: 700 1rem var(--font);
+  margin-bottom: 2rem;
+}
+
+.header .wrap-toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 1rem;
+  cursor: pointer;
+}
+
+.header .wrap-toggle .theme {
+  color: var(--text);
+  font: 700 1rem var(--font);
+}
+
+.header .wrap-toggle .switch {
+  position: relative;
+  display: inline-block;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.header .wrap-toggle .switch #switcher {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.header .wrap-toggle .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--toggle);
+}
+
+.header .wrap-toggle .switch .slider:hover {
+  background: var(--twitter);
+}
+
+.header .wrap-toggle .switch .slider::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--top-bg);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.header .wrap-toggle .switch #switcher:checked + .slider::before {
+  -webkit-transform: translateX(28px);
+          transform: translateX(28px);
+}
+
+.content {
+  padding: 1rem 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.content .grid-1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "fb" "tt" "it"  "yt";
+  row-gap: 1.5rem;
+}
+
+.content .grid-1 .wrap {
+  background: var(--card-bg);
+  border-radius: 0.4rem;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+}
+
+.content .grid-1 .wrap:hover {
+  background: var(--card-bg-hover);
+}
+
+.content .grid-1 .wrap .background {
+  width: 100%;
+  height: 0.3rem;
+}
+
+.content .grid-1 .wrap .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.7rem;
+  margin: 2.2rem 0 1.5rem 0;
+}
+
+.content .grid-1 .wrap .user img {
+  width: 20px;
+  height: 20px;
+}
+
+.content .grid-1 .wrap .user p {
+  color: var(--text);
+  font: 700 0.85rem var(--font);
+}
+
+.content .grid-1 .wrap .number-followers {
+  color: var(--text-2);
+  font: 700 3.5rem var(--font);
+  margin-bottom: 0.3rem;
+}
+
+.content .grid-1 .wrap .followers {
+  color: var(--text);
+  font: 400 0.9rem var(--font);
+  letter-spacing: 0.3rem;
+}
+
+.content .grid-1 .wrap .statistics {
+  margin: 1.8rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.2rem;
+}
+
+.content .grid-1 .wrap .statistics .fa {
+  width: 8px;
+  height: 4px;
+}
+
+.content .grid-1 .wrap .statistics > p {
+  font: 700 0.85rem var(--font);
+}
+
+.content .grid-1 .fb {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: fb;
+}
+
+.content .grid-1 .fb .background {
+  background: var(--facebook);
+}
+
+.content .grid-1 .fb .statistics {
+  color: var(--lime-green);
+}
+
+.content .grid-1 .tt {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: tt;
+}
+
+.content .grid-1 .tt .background {
+  background: var(--twitter);
+}
+
+.content .grid-1 .tt .statistics {
+  color: var(--lime-green);
+}
+
+.content .grid-1 .it {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: it;
+}
+
+.content .grid-1 .it .background {
+  background: var(--instagram);
+}
+
+.content .grid-1 .it .statistics {
+  color: var(--lime-green);
+}
+
+.content .grid-1 .yt {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: yt;
+}
+
+.content .grid-1 .yt .background {
+  background: var(--youtube);
+}
+
+.content .grid-1 .yt .statistics {
+  color: var(--bright-red);
+}
+
+.content .title-secondary {
+  color: var(--text-2);
+  font: 700 1.7rem var(--font);
+  margin: 3rem 0 2rem 0;
+}
+
+.content .grid-2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-areas: "item1" "item2" "item3" "item4" "item5" "item6" "item7" "item8";
+  row-gap: 1.2rem;
+}
+
+.content .grid-2 .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.3rem;
+  background: var(--card-bg);
+  padding: 1.5rem 2rem 1.5rem 1.5rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.content .grid-2 .item:hover {
+  background: var(--card-bg-hover);
+}
+
+.content .grid-2 .item .row-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content .grid-2 .item .row-1 > p {
+  color: var(--text);
+  font: 700 0.9rem var(--font);
+}
+
+.content .grid-2 .item .row-1 > img {
+  width: 20px;
+  height: 20px;
+}
+
+.content .grid-2 .item .row-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content .grid-2 .item .row-2 > p {
+  color: var(--text-2);
+  font: 700 2rem var(--font);
+}
+
+.content .grid-2 .item .row-2 > .statistics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.2rem;
+}
+
+.content .grid-2 .item .row-2 > .statistics > .fa {
+  width: 8px;
+  height: 4px;
+}
+
+.content .grid-2 .item .row-2 > .statistics > p {
+  font: 700 0.85rem var(--font);
+}
+
+.content .grid-2 .item-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: item1;
+}
+
+.content .grid-2 .item-1 .row-2 > .statistics {
+  color: var(--lime-green);
+}
+
+.content .grid-2 .item-2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: item2;
+}
+
+.content .grid-2 .item-2 .row-2 > .statistics {
+  color: var(--bright-red);
+}
+
+.content .grid-2 .item-3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: item3;
+}
+
+.content .grid-2 .item-3 .row-2 > .statistics {
+  color: var(--lime-green);
+}
+
+.content .grid-2 .item-4 {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: item4;
+}
+
+.content .grid-2 .item-4 .row-2 > .statistics {
+  color: var(--lime-green);
+}
+
+.content .grid-2 .item-5 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: item5;
+}
+
+.content .grid-2 .item-5 .row-2 > .statistics {
+  color: var(--lime-green);
+}
+
+.content .grid-2 .item-6 {
+  -ms-grid-row: 6;
+  -ms-grid-column: 1;
+  grid-area: item6;
+}
+
+.content .grid-2 .item-6 .row-2 > .statistics {
+  color: var(--lime-green);
+}
+
+.content .grid-2 .item-7 {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: item7;
+}
+
+.content .grid-2 .item-7 .row-2 > .statistics {
+  color: var(--bright-red);
+}
+
+.content .grid-2 .item-8 {
+  -ms-grid-row: 8;
+  -ms-grid-column: 1;
+  grid-area: item8;
+}
+
+.content .grid-2 .item-8 .row-2 > .statistics {
+  color: var(--bright-red);
+}
+
+@media (min-width: 48rem) {
+  .header {
+    padding: 3rem 2.5rem;
+  }
+  .header .wrap-title .title {
+    font-size: 2.2rem;
+  }
+  .header .wrap-title .subtitle {
+    font-size: 1.1rem;
+  }
+  .header .wrap-toggle .theme {
+    font-size: 1.1rem;
+  }
+  .content {
+    padding: 1rem 2.5rem;
+  }
+  .content .grid-1 {
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "fb tt" "it yt";
+    gap: 1.5rem;
+  }
+  .content .grid-1 .fb {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: fb;
+  }
+  .content .grid-1 .tt {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: tt;
+  }
+  .content .grid-1 .it {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: it;
+  }
+  .content .grid-1 .yt {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: yt;
+  }
+  .content .grid-2 {
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "item1 item2" "item3 item4" "item5 item6" "item7 item8";
+    gap: 1.5rem;
+  }
+  .content .grid-2 .item-1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: item1;
+  }
+  .content .grid-2 .item-2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: item2;
+  }
+  .content .grid-2 .item-3 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: item3;
+  }
+  .content .grid-2 .item-4 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: item4;
+  }
+  .content .grid-2 .item-5 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: item5;
+  }
+  .content .grid-2 .item-6 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: item6;
+  }
+  .content .grid-2 .item-7 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: item7;
+  }
+  .content .grid-2 .item-8 {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    grid-area: item8;
+  }
+}
+
+@media (min-width: 64rem) {
+  .header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 3rem 2.5rem;
+  }
+  .header .wrap-title {
+    border: none;
+  }
+  .header .wrap-title .subtitle {
+    margin: 0;
+  }
+  .header .wrap-toggle {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    gap: 1rem;
+    padding: 0;
+  }
+  .content {
+    padding: 0 2.5rem;
+  }
+  .content .grid-1 {
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: "fb tt it yt";
+    gap: 2rem;
+  }
+  .content .grid-1 .wrap .user > p {
+    font-size: 1rem;
+  }
+  .content .grid-1 .wrap .statistics > p {
+    font-size: 1rem;
+  }
+  .content .grid-1 .fb {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: fb;
+  }
+  .content .grid-1 .tt {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: tt;
+  }
+  .content .grid-1 .it {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: it;
+  }
+  .content .grid-1 .yt {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    grid-area: yt;
+  }
+  .content .grid-2 {
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: "item1 item2 item3 item4" "item5 item6 item7 item8";
+    gap: 2rem;
+  }
+  .content .grid-2 .item {
+    gap: 2rem;
+  }
+  .content .grid-2 .item .row-1 > p {
+    font-size: 1rem;
+  }
+  .content .grid-2 .item .row-2 > .statistics > p {
+    font-size: 1rem;
+  }
+  .content .grid-2 .item-1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: item1;
+  }
+  .content .grid-2 .item-2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: item2;
+  }
+  .content .grid-2 .item-3 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: item3;
+  }
+  .content .grid-2 .item-4 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    grid-area: item4;
+  }
+  .content .grid-2 .item-5 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: item5;
+  }
+  .content .grid-2 .item-6 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: item6;
+  }
+  .content .grid-2 .item-7 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: item7;
+  }
+  .content .grid-2 .item-8 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    grid-area: item8;
+  }
+}
+
+@media (min-width: 75rem) {
+  .pattern {
+    height: 19rem;
+  }
+  .header {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+  .content {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

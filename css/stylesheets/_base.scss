@@ -1,0 +1,28 @@
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 14px;
+    transition: 0.4s;
+}
+
+body {
+    background: var(--bg);
+}
+
+.pattern {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 17.5rem;
+    width: 100%;
+    z-index: -2;
+    background-color: var(--top-bg);
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}

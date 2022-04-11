@@ -1,0 +1,275 @@
+
+// ===== Content ===== //
+.content {
+    padding: 1rem 1.8rem;
+    margin-bottom: 2rem;
+
+    .grid-1 {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "fb"
+                             "tt"
+                             "it" 
+                             "yt";
+        row-gap: 1.5rem;
+
+        
+        // ===== Container ===== //
+        .wrap {
+            background: var(--card-bg);
+            border-radius: 0.4rem;
+            overflow: hidden;
+            text-align: center;
+            cursor: pointer;
+
+            &:hover {
+                background: var(--card-bg-hover);
+            }
+
+            .background {
+                width: 100%;
+                height: 0.3rem;
+            }
+
+            .user {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.7rem;
+                margin: 2.2rem 0 1.5rem 0;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+
+                p {
+                    color: var(--text);
+                    font: 700 0.85rem var(--font);
+                }
+            }
+
+            .number-followers {
+                color: var(--text-2);
+                font: 700 3.5rem var(--font);
+                margin-bottom: 0.3rem;
+            }
+
+            .followers {
+                color: var(--text);
+                font: 400 0.9rem var(--font);
+                letter-spacing: 0.3rem;
+            }
+
+            .statistics {
+                margin: 1.8rem 0;
+                display: flex;
+                justify-content: center;
+                gap: 0.2rem;
+
+                .fa {
+                    width: 8px;
+                    height: 4px;
+                }
+
+                & > p {
+                    font: 700 0.85rem var(--font);
+                }
+            }
+        }
+
+
+        // ===== Items ===== //
+        .fb {
+            grid-area: fb;
+
+            .background {
+                background: var(--facebook);
+            }
+
+            .statistics {
+                color: var(--lime-green);
+            }
+        }
+
+        .tt {
+            grid-area: tt;
+
+            .background {
+                background: var(--twitter);
+            }
+
+            
+            .statistics {
+                color: var(--lime-green);
+            }
+        }
+
+        .it {
+            grid-area: it;
+
+            .background {
+                background: var(--instagram);
+            }
+
+            
+            .statistics {
+                color: var(--lime-green);
+            }
+        }
+
+        .yt {
+            grid-area: yt;
+
+            .background {
+                background: var(--youtube);
+            }
+
+            
+            .statistics {
+                color: var(--bright-red);
+            }
+        }
+    }
+
+
+    .title-secondary {
+        color: var(--text-2);
+        font: 700 1.7rem var(--font);
+        margin: 3rem 0 2rem 0;
+    }
+
+
+    .grid-2 {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "item1" "item2" "item3" "item4"
+                             "item5" "item6" "item7" "item8";
+        row-gap: 1.2rem;
+
+
+        // ===== Container ===== //
+        .item {
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
+            background: var(--card-bg);
+            padding: 1.5rem 2rem 1.5rem 1.5rem;
+            border-radius: 0.4rem;
+            cursor: pointer;
+
+            &:hover {
+                background: var(--card-bg-hover);
+            }
+
+            .row-1 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & > p {
+                    color: var(--text);
+                    font: 700 0.9rem var(--font);
+                }
+
+                & > img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            .row-2 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & > p {
+                    color: var(--text-2);
+                    font: 700 2rem var(--font);
+                }
+
+                & > .statistics {
+                    display: flex;
+                    justify-content: center;
+                    gap: 0.2rem;
+
+                    & > .fa {
+                        width: 8px;
+                        height: 4px;
+                    }
+
+                    & > p {
+                        font: 700 0.85rem var(--font);
+                    }
+                }
+            }
+        }
+
+        .item-1 {
+            grid-area: item1;
+
+            .row-2 > .statistics {
+                color: var(--lime-green);
+            }
+        }
+
+        .item-2 {
+            grid-area: item2;
+
+            .row-2 > .statistics {
+                color: var(--bright-red);
+            }
+        }
+
+        .item-3 {
+            grid-area: item3;
+
+            .row-2 > .statistics {
+                color: var(--lime-green);
+            }
+        }
+
+        .item-4 {
+            grid-area: item4;
+
+            .row-2 > .statistics {
+                color: var(--lime-green);
+            }
+        }
+
+        .item-5 {
+            grid-area: item5;
+
+            .row-2 > .statistics {
+                color: var(--lime-green);
+            }
+        }
+
+        .item-6 {
+            grid-area: item6;
+
+            .row-2 > .statistics {
+                color: var(--lime-green);
+            }
+        }
+
+        .item-7 {
+            grid-area: item7;
+
+            .row-2 > .statistics {
+                color: var(--bright-red);
+            }
+        }
+
+        .item-8 {
+            grid-area: item8;
+
+            .row-2 > .statistics {
+                color: var(--bright-red);
+            }
+        }
+    }
+}
+

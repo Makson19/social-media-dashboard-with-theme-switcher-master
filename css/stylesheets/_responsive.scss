@@ -1,0 +1,233 @@
+
+// ===== Media Queries ===== //
+
+// min-width: 768px
+@media (min-width: 48rem) {
+    .header {
+        padding: 3rem 2.5rem;
+
+        .wrap-title {
+            .title {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        .wrap-toggle {
+            .theme {
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    .content {
+        padding: 1rem 2.5rem;
+        
+        .grid-1 {
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "fb tt"
+                                 "it yt";
+                                 
+            gap: 1.5rem;
+
+            .fb {
+                grid-area: fb;
+            }
+
+            .tt {
+                grid-area: tt;
+            }
+
+            .it {
+                grid-area: it;
+            }
+
+            .yt {
+                grid-area: yt;
+            }
+        }
+
+        .grid-2 {
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "item1 item2"
+                                 "item3 item4"
+                                 "item5 item6"
+                                 "item7 item8";
+            gap: 1.5rem;
+
+
+            .item-1 {
+                grid-area: item1;
+            }
+
+            .item-2 {
+                grid-area: item2;
+            }
+
+            .item-3 {
+                grid-area: item3;
+            }
+
+            .item-4 {
+                grid-area: item4;
+            }
+
+            .item-5 {
+                grid-area: item5;
+            }
+
+            .item-6 {
+                grid-area: item6;
+            }
+
+            .item-7 {
+                grid-area: item7;
+            }
+
+            .item-8 {
+                grid-area: item8;
+            }
+        }
+    }
+}
+
+
+// min-width: 1024px
+@media (min-width: 64rem) {
+    .header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3rem 2.5rem;
+
+        .wrap-title {
+            border: none;
+            
+            .subtitle {
+                margin: 0;
+            }
+        }
+
+        .wrap-toggle {
+            justify-content: flex-start;
+            gap: 1rem;
+            padding: 0;
+        }
+    }
+
+
+    .content {
+        padding: 0 2.5rem;
+
+        .grid-1 {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-areas: "fb tt it yt";
+            gap: 2rem;
+
+            .wrap {
+                .user > p {
+                    font-size: 1rem;
+                }
+
+                .statistics > p {
+                    font-size: 1rem;
+                }
+            }
+
+
+            .fb {
+                grid-area: fb;
+            }
+
+            .tt {
+                grid-area: tt;
+            }
+
+            .it {
+                grid-area: it;
+            }
+
+            .yt {
+                grid-area: yt;
+            }
+
+        }
+
+
+        .grid-2 {
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-areas: "item1 item2 item3 item4"
+                                 "item5 item6 item7 item8";
+            gap: 2rem;
+
+            .item {
+                gap: 2rem;
+
+                .row-1 > p {
+                    font-size: 1rem;
+                }
+
+                .row-2 > .statistics > p {
+                    font-size: 1rem;
+                }
+            }
+        
+            .item-1 {
+                grid-area: item1;
+            }
+                    
+            .item-2 {
+                grid-area: item2;
+            }
+                    
+            .item-3 {
+                grid-area: item3;
+            }
+                    
+            .item-4 {
+                grid-area: item4;
+            }
+                    
+            .item-5 {
+                grid-area: item5;
+            }
+                    
+            .item-6 {
+                grid-area: item6;
+            }
+                    
+            .item-7 {
+                grid-area: item7;
+            }
+                    
+            .item-8 {
+                grid-area: item8;
+            }
+        }
+    }
+}
+
+
+// min-width: 1200px
+@media (min-width: 75rem) {
+    .pattern {
+        height: 19rem;
+    }
+
+    .header {
+        padding-left: 12rem;
+        padding-right: 12rem;
+    }
+
+    .content {
+        padding-left: 12rem;
+        padding-right: 12rem;
+    }
+}
