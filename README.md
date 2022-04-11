@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/Makson19/social-media-dashboard-with-theme-switcher-master](https://github.com/Makson19/social-media-dashboard-with-theme-switcher-master)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://makson19.github.io/social-media-dashboard-with-theme-switcher-master/](https://makson19.github.io/social-media-dashboard-with-theme-switcher-master/)
 
 ## My process
 
